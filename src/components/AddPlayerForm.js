@@ -9,20 +9,16 @@ class AddPlayerForm extends Component {
     name: ""
   };
 
-  getInitialState() {
-    return { name: "" };
-  }
-
-  onNameChange(e) {
+  onNameChange = e => {
     const name = e.target.value;
     this.setState({ name: name });
-  }
+  };
 
-  onSubmit(e) {
+  onSubmit = e => {
     if (e) e.preventDefault();
     this.props.onAdd(this.state.name);
     this.setState({ name: "" });
-  }
+  };
 
   render() {
     return (
