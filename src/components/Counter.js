@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropTypes } from "react";
 
 const Counter = props => {
   return (
@@ -21,8 +21,8 @@ const Counter = props => {
 };
 
 Counter.propTypes = {
-  onChange: React.PropTypes.func.isRequired,
-  score: React.PropTypes.number.isRequired
+  onChange: PropTypes.func.isRequired,
+  score: PropTypes.number.isRequired
 };
 
 export default Counter;
