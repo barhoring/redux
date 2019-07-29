@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import AddPlayerForm from "../components/AddPlayerForm";
 import Player from "../components/Player";
 import Header from "../components/Header";
 
-export default class Scoreboard extends Component {
+class Scoreboard extends Component {
   state = {
     players: [
       {
@@ -60,3 +61,11 @@ export default class Scoreboard extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  {
+    player: state;
+  }
+};
+
+export default connect(mapStateToProps(Scoreboard));
