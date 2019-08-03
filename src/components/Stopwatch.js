@@ -15,27 +15,27 @@ export default class Stopwatch extends Component {
     clearInterval(this.interval);
   }
 
-  onStart() {
+  onStart = () => {
     this.setState({
       running: true,
       previousTime: Date.now()
     });
-  }
+  };
 
-  onStop() {
+  onStop = () => {
     this.setState({
       running: false
     });
-  }
+  };
 
-  onReset() {
+  onReset = () => {
     this.setState({
       elapsedTime: 0,
       previousTime: Date.now()
     });
-  }
+  };
 
-  onTick() {
+  onTick = () => {
     if (this.state.running) {
       var now = Date.now();
       this.setState({
@@ -43,7 +43,7 @@ export default class Stopwatch extends Component {
         previousTime: Date.now()
       });
     }
-  }
+  };
 
   render() {
     var seconds = Math.floor(this.state.elapsedTime / 1000);

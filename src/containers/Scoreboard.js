@@ -12,6 +12,7 @@ class Scoreboard extends Component {
   };
 
   render() {
+    debugger;
     const { dispatch, players } = this.props;
     const addPlayer = bindActionCreators(
       PlayerActionCreators.addPlayer,
@@ -26,7 +27,7 @@ class Scoreboard extends Component {
       dispatch
     );
 
-    const playerComponents = players.map((player, index) => {
+    const playerComponents = players.map((player, index) => (
       <Player
         index={index}
         name={player.name}
@@ -34,8 +35,8 @@ class Scoreboard extends Component {
         key={player.name}
         updatePlayerScore={updatePlayerScore}
         removePlayer={removePlayer}
-      />;
-    });
+      />
+    ));
 
     return (
       <div className="scoreboard">
@@ -47,10 +48,8 @@ class Scoreboard extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  {
-    players: state;
-  }
-};
+const mapStateToProps = state => ({
+  players: state
+});
 
 export default connect(mapStateToProps)(Scoreboard);
